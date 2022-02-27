@@ -30,7 +30,7 @@ jobs:
   
   kubectl:
     runs-on: ubuntu-latest
-    needs: docker
+    # needs: docker
     steps:
       - name: apply argocd app
         uses: actions-hub/kubectl@master
