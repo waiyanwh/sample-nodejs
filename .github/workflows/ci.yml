@@ -27,3 +27,13 @@ jobs:
         with:
           push: true
           tags: waiyanwinhtain/sample-nodejs:latest
+  
+  kubectl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get pods
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: get pods
