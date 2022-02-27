@@ -37,4 +37,4 @@ jobs:
         with:
           config: ${{ secrets.KUBE_CONFIG }}
           version: latest
-          args: '"apply -f k8s/argocd.yaml"'
+          args: apply -f k8s/argocd.yaml
