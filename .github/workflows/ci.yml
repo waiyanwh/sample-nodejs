@@ -30,11 +30,12 @@ jobs:
   
   kubectl:
     runs-on: ubuntu-latest
+    env:
+      KUBECONFIG: ${{ secrets.KUBE_CONFIG }}
     # needs: docker
     steps:
       - name: apply argocd app
-        uses: myrotvorets/kubectl-action@2.0.0
-        with:
-          config: ${{ secrets.KUBE_CONFIG }}
-          version: latest
-          args: apply -f k8s/argocd.yaml
+        run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+      - name: get pods
+        run: kubectl get pods
