@@ -16,6 +16,6 @@ spec:
             pathType: Exact
             backend:
               service:
-                name:  nginx
+                name:  nodejs
                 port:
                   number: 80
