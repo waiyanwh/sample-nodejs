@@ -6,7 +6,7 @@ metadata:
   name: nodejs-ingress
 spec:
   rules:
-    - host: nodejs.wyhomelab.net
+    - host: node-app.wyhomelab.net
       http:
         paths:
           - path: /
