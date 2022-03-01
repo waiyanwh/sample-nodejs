@@ -1,15 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nodejs-svc
-  namespace: default
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+  name: nodejs-ingress
 spec:
-  tls:
-  - hosts:
-    - nodejs.dopevs.cloud
-    secretName: dopevs-cloud-wildcard
   rules:
-    - host: nodejs.dopevs.cloud
+    - host: nodejs.wyhomelab.net
       http:
         paths:
           - path: /
