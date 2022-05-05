@@ -27,3 +27,5 @@ jobs:
         with:
           push: true
           tags: waiyanwinhtain/sample-nodejs:latest
+          build-args: |
+            TOKEN=Test
