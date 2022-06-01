@@ -36,6 +36,7 @@ jobs:
           image-ref: 'waiyanwinhtain/sample-nodejs:latest'
           format: 'sarif'
           output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
           
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
