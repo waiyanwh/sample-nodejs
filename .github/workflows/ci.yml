@@ -36,6 +36,8 @@ jobs:
           image-ref: 'waiyanwinhtain/sample-nodejs:latest'
           format: 'sarif'
           output: 'trivy-results.sarif'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
           
       - name: Upload Trivy scan results to GitHub Security tab
