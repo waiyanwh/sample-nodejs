@@ -15,7 +15,7 @@ jobs:
         uses: mcmarkj/1password-actions@v2
         id: creds
         with:
-          connect-server-url: https://connect.staging-internal.opn.dev
+          connect-server-url: ${{ secrets.CONNECT_SERVER_URL }}
           connect-server-token: ${{ secrets.CONNECT_SERVER_TOKEN }}
           export-env-vars: "true"
           secret-path: |
@@ -31,7 +31,7 @@ jobs:
       - name: Configure 1Password Connect
         uses: 1password/load-secrets-action/configure@v1
         with:
-          connect-host: https://connect.staging-internal.opn.dev
+          connect-host: ${{ secrets.CONNECT_SERVER_URL }}
           connect-token: ${{ secrets.CONNECT_SERVER_TOKEN }}
 
       - name: Load secret
