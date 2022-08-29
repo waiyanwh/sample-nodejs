@@ -38,4 +38,5 @@ jobs:
           connect-server-token: ${{ secrets.CONNECT_SERVER_TOKEN }}
           export-env-vars: "true"
           secret-path: |
-            Github Action Vault > Test Project 
+            Github Action Vault > Test Project > username | USERNAME
+            Github Action Vault > Test Project > password | PASSWORD
