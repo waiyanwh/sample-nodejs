@@ -6,40 +6,17 @@ on:
       - 'main'
 
 jobs:
-  docker:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-
-      # First approach  
-      - name: Import Creds
-        uses: mcmarkj/1password-actions@v2
-        id: creds
-        with:
-          connect-server-url: ${{ secrets.CONNECT_SERVER_URL }}
-          connect-server-token: ${{ secrets.CONNECT_SERVER_TOKEN }}
-          export-env-vars: "true"
-          secret-path: |
-            Github Action Vault > Test Project > username | USERNAME
-            Github Action Vault > Test Project > password | PASSWORD
-
-      - run: echo "$USERNAME"
-
-      - run: echo "$PASSWORD"
-
-      # -----------------------------------------------------------------------------
-      # Second Approach
-      - name: Configure 1Password Connect
-        uses: 1password/load-secrets-action/configure@v1
-        with:
-          connect-host: ${{ secrets.CONNECT_SERVER_URL }}
-          connect-token: ${{ secrets.CONNECT_SERVER_TOKEN }}
-
-      - name: Load secret
-        uses: 1password/load-secrets-action@v1
-        env:
-          USERNAME: op://github-action-vault/test-project/username
-          PASSWORD: op://github-action-vault/test-project/password
-
-      - run: echo "$USERNAME"
-
-      - run: echo "$PASSWORD"
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
