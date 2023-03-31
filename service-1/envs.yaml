@@ -1,0 +1,4 @@
+TEST: "test.youromain.com"
+ENV: "staging
+DOMAIN: "test.yourdomain.com"
+
