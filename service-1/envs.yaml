@@ -1,4 +1,5 @@
 TEST: "test.youromain.com"
-ENV: "staging
+ENV: "staging"
 DOMAIN: "test.yourdomain.com"
+SECRET: "TESTTESTTEST"
 
